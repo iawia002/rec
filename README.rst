@@ -1,6 +1,11 @@
 rec
 ===
 
+.. image:: https://travis-ci.org/iawia002/rec.svg?branch=master
+    :alt: Build Status
+    :target: https://travis-ci.org/iawia002/rec
+
+
 a collection of some useful regular expressions.
 
 Hello, world

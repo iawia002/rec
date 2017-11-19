@@ -12,8 +12,8 @@ class MainTest(unittest.TestCase):
     def test_domain(self):
         self.assertEqual(rec.domain('aa.com'), ['aa.com'])
         self.assertEqual(rec.domain('aa.com', root=False), ['aa'])
-        self.assertTrue(rec.domain('aa.com', result='boolean'))
-        self.assertFalse(rec.domain('hello', result='boolean'))
+        self.assertTrue(rec.domain('aa.com', ret='bool'))
+        self.assertFalse(rec.domain('hello', ret='bool'))
 
 
 if __name__ == '__main__':

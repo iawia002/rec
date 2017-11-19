@@ -11,23 +11,23 @@ __all__ = ['domain']
 class Base(object):
     rule = None
 
-    def __call__(self, text, result='list'):
+    def __call__(self, text, ret='list'):
         '''
-        result:
+        ret:
             list: return all match results
-            boolean: return if match
+            bool: return if match
             other return the re rule object
         '''
         if not self.rule:
             raise NotImplementedError()
 
-        if result not in ['list', 'boolean']:
+        if ret not in ['list', 'bool']:
             return self.rule
 
         results = self.rule.findall(text)
-        if result == 'list':
+        if ret == 'list':
             return results
-        if result == 'boolean':
+        if ret == 'bool':
             if len(results):
                 return True
             return False
@@ -44,9 +44,9 @@ class Domain(Base):
         re.I
     )
 
-    def __call__(self, text, result='list', root=True):
-        results = super(Domain, self).__call__(text, result)
-        if result != 'list':
+    def __call__(self, text, ret='list', root=True):
+        results = super(Domain, self).__call__(text, ret)
+        if ret != 'list':
             return results
         if root:
             return ['.'.join(item) for item in results]

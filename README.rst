@@ -33,7 +33,7 @@ Example
 Documentation
 -------------
 
-TODO
+See `doc.md <https://github.com/iawia002/rec/blob/master/doc.md>`_
 
 
 🌙

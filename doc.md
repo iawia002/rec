@@ -36,6 +36,8 @@ Get the domain name from a URL
 
   * **root**: Boolean, default `True`, whether the result needs to include the root domain name.
 
+**Usage**:
+
 ```python
 In [1]: import rec
 

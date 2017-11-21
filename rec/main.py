@@ -40,7 +40,10 @@ class Domain(Base):
     '''
     rule = re.compile(
         r'([a-z0-9][-a-z0-9]{0,62})\.'
-        '(com\.cn|com|net|cn)',
+        r'('
+        r'cn|com\.cn|com\.hk|com|net|edu|gov|biz|org|info|pro|name|xxx|xyz|'
+        r'me|top|cc|tv'
+        r')(?!\.)',  # can't be a dot after root domain
         re.I
     )
 

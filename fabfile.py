@@ -9,3 +9,9 @@ def test():
     local(
         'PYTHONPATH=./ coverage run tests/runtests.py'
     )
+
+
+def upload():
+    local(
+        'python setup.py upload'
+    )

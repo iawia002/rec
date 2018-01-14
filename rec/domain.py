@@ -4,33 +4,10 @@ from __future__ import unicode_literals
 
 import re
 
+from .base import Base
+
 
 __all__ = ['domain']
-
-
-class Base(object):
-    rule = None
-
-    def __call__(self, text, ret='list'):
-        '''
-        ret:
-            list: return all match results
-            bool: return if match
-            other return the re rule object
-        '''
-        if not self.rule:
-            raise NotImplementedError()
-
-        if ret not in ['list', 'bool']:
-            return self.rule
-
-        results = self.rule.findall(text)
-        if ret == 'list':
-            return results
-        if ret == 'bool':
-            if len(results):
-                return True
-            return False
 
 
 class Domain(Base):
@@ -41,8 +18,9 @@ class Domain(Base):
     rule = re.compile(
         r'([a-z0-9][-a-z0-9]{0,62})\.'
         r'('
-        r'cn|com\.cn|com\.hk|com|net|edu|gov|biz|org|info|pro|name|xxx|xyz|'
-        r'me|top|cc|tv'
+        r'cn|com|net|edu|gov|biz|org|info|pro|name|xxx|xyz|'
+        r'me|top|cc|tv|tt|'
+        r'com\.cn|com\.hk'
         r')(?!\.)',  # can't be a dot after root domain
         re.I
     )

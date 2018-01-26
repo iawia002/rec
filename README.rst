@@ -5,6 +5,8 @@ rec
     :alt: Build Status
     :target: https://travis-ci.org/iawia002/rec
 
+.. image:: https://codecov.io/gh/iawia002/rec/branch/master/graph/badge.svg
+    :target: https://codecov.io/gh/iawia002/rec
 
 a collection of some useful regular expressions.
 
